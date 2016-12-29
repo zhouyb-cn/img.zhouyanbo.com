@@ -24,7 +24,7 @@ class ContactSend extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:posts|max:255',
+            'title' => 'required|max:255',
             'name' => 'required',
             'email' => 'required',
             'content' => 'required',
@@ -32,11 +32,11 @@ class ContactSend extends FormRequest
         ];
     }
 
-    // public function messages()
-    // {
-    //     return [
-    //         'title.required' => 'A title is required'
-    //     ];
-    // }
+    public function messages()
+    {
+        return [
+            'captcha.captcha' => 'captcha error'
+        ];
+    }
 
 }
