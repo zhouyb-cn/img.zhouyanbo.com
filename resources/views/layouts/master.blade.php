@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" type="text/css" href="/css/app.css">
         <link rel="stylesheet" type="text/css" href="/css/libs.css">
+        <link rel="stylesheet" type="text/css" href="/css/narrow.css">
 
     </head>
     <body>
@@ -18,7 +19,7 @@
         @yield('content')
 
         <script type="text/javascript" src="/js/libs.js"></script>
-    	@include('flash')
+        @include('flash')
 
     </body>
 </html>

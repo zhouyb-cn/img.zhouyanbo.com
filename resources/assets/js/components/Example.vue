@@ -6,7 +6,7 @@
                     <div class="panel-heading">Example Component</div>
 
                     <div class="panel-body">
-                        I'm an example component!
+                        {{ message }}
                     </div>
                 </div>
             </div>
@@ -16,6 +16,11 @@
 
 <script>
     export default {
+        data() {
+            return {
+                message: 'Hello'
+            }
+        },
         mounted() {
             console.log('Component ready.')
         }
