@@ -2,15 +2,11 @@
 
 namespace APP\Http;
 
-class Flash {
+class Flash
+{
 
-	public function message($message) {
-		session()->flash('flash_message', $message);
-	}
-
+    public function message($message)
+    {
+        session()->flash('flash_message', $message);
+    }
 }
-
-
-
-
- ?>
