@@ -25,7 +25,7 @@ class ContactSend extends FormRequest
     {
         return [
             'title' => 'required|max:255',
-            'name' => 'required',
+            // 'name' => 'required',
             'email' => 'required',
             'content' => 'required',
             'captcha' => 'required|captcha'

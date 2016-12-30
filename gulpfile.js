@@ -23,7 +23,7 @@ elixir(mix => {
     ], './public/js/libs.js')
 
     .styles([
-        'libs/sweetalert.css',
+        'libs/sweetalert.css'
     ], './public/css/libs.css')
 
     .styles([
