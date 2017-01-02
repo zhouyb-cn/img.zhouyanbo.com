@@ -17,6 +17,7 @@ Route::group([], function() {
 	Route::get('/', 'PageController@home');
 	Route::get('/about', 'PageController@about');
 	Route::get('/contact', 'PageController@contact');
+	Route::get('/message', 'PageController@message');
 });
 
 Route::post('/file/upload.json', 'FileController@upload');
@@ -25,3 +26,7 @@ Route::post('/contact/send.json', 'ContactController@send');
 Route::group(['prefix' => 'captcha'], function() {
 	Route::get('create', 'CaptchaController@create');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

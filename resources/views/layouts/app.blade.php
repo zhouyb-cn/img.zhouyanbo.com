@@ -11,28 +11,7 @@
     <title>{{ config('app.name', 'Yanbo') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
-    <link rel="stylesheet" type="text/css" href="/css/libs.css">
-    <link rel="stylesheet" type="text/css" href="/css/dropzone.min.css">
-    <style type="text/css">
-        .dropzone {
-            border: 2px dashed #0087F7;
-            border-radius: 5px;
-            background: white;
-        }
-        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-            color: #fff;
-            background-color: #428bca;
-            border-radius: 2px;
-        }
-        .navbar-default .navbar-nav > li > a {
-            color: #428bca;
-        }
-        .navbar-default .navbar-nav > li > a:hover {
-            text-decoration: none;
-            background-color: #eee;
-        }
-    </style>
+    <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -70,20 +49,30 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                        @if($page == 'index')
-                            <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                        <!-- Authentication Links -->
+                        @if (Auth::guest())
+                            <li><a href="{{ url('/login') }}">Login</a></li>
+                            <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                        @endif
-                        @if($page == 'about')
-                            <li class="active"><a href="{{ url('/about') }}">About</a></li>
-                        @else
-                            <li><a href="{{ url('/about') }}">About</a></li>
-                        @endif
-                        @if($page == 'contact')
-                            <li class="active"><a href="{{ url('/contact') }}">Contact</a></li>
-                        @else
-                            <li><a href="{{ url('/contact') }}">Contact</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ url('/logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
                         @endif
                     </ul>
                 </div>
@@ -95,9 +84,5 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script type="text/javascript" src="/js/libs.js"></script>
-    @include('flash')
-    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 </body>
 </html>
-

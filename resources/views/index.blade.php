@@ -2,37 +2,49 @@
 
 @section('content')
 
-<p>
-  Drag the file to the following area, in the bottom of the area will be displayed in a hash of the directory name stored
-</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">File Hash</div>
+                	<div class="panel-body">
 
-<form action="/file/upload.json" class="dropzone" id="hashFile">
-	{{ csrf_field() }}
-</form>
+						<p>
+						  Drag the file to the following area, in the bottom of the area will be displayed in a hash of the directory name stored
+						</p>
 
-<div class="row marketing">
-    <div class="col-lg-8">
-        <form class="form-horizontal" role="form">
-            <div class="form-group">
-                <label for="filename" class="col-sm-4 control-label">Filename</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="filename" placeholder="Filename" name="filename" disabled>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="level-1" class="col-sm-4 control-label">level-1</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="level-1" placeholder="First level dir name" name="level-1" disabled>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="level-2" class="col-sm-4 control-label">level-2</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control" id="level-2" placeholder="Second level dir name" name="level-2" disabled>
-                </div>
-            </div>
-        </form>
-    </div>
+						<form action="/file/upload.json" class="dropzone" id="hashFile">
+							{{ csrf_field() }}
+						</form>
+						<br>
+						<div class="row marketing">
+						    <div class="col-lg-8">
+						        <form class="form-horizontal" role="form">
+						            <div class="form-group">
+						                <label for="filename" class="col-sm-4 control-label">Filename</label>
+						                <div class="col-sm-8">
+						                    <input type="text" class="form-control" id="filename" placeholder="Filename" name="filename" disabled>
+						                </div>
+						            </div>
+						            <div class="form-group">
+						                <label for="level-1" class="col-sm-4 control-label">level-1</label>
+						                <div class="col-sm-8">
+						                    <input type="text" class="form-control" id="level-1" placeholder="First level dir name" name="level-1" disabled>
+						                </div>
+						            </div>
+						            <div class="form-group">
+						                <label for="level-2" class="col-sm-4 control-label">level-2</label>
+						                <div class="col-sm-8">
+						                    <input type="text" class="form-control" id="level-2" placeholder="Second level dir name" name="level-2" disabled>
+						                </div>
+						            </div>
+						        </form>
+						    </div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style type="text/css">

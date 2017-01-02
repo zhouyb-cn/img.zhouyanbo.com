@@ -41,4 +41,14 @@ class ContactController extends Controller
             return false;
         }
     }
+
+    public function contactList() {
+        return ['contactList' => Contact::all()];
+        // return Contact::all();
+    }
+
+    public function delete() 
+    {
+        
+    }
 }
