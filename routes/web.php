@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Input;
 |
 */
 
+/** Page routes **/ 
 Route::group([], function() {
 	Route::get('/', 'PageController@home');
 	Route::get('/about', 'PageController@about');
 	Route::get('/contact', 'PageController@contact');
+});
+
+/** need login **/ 
+Route::group(['middleware' => 'auth'], function() {
 	Route::get('/message', 'PageController@message');
 });
 
@@ -27,6 +32,6 @@ Route::group(['prefix' => 'captcha'], function() {
 	Route::get('create', 'CaptchaController@create');
 });
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index');
