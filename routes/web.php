@@ -35,3 +35,9 @@ Route::group(['prefix' => 'captcha'], function() {
 // Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/demo', 'DemoController@store');
+
+Route::get('page/demo', function() {
+	return view('demo');
+});
