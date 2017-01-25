@@ -17,7 +17,7 @@ class UploadController extends Controller
 				$fileName       = $this->getFileName($md5, $extension);
 				$firstLevelDir  = $this->getCatLogName($md5, 1);
 				$secondLevelDir = $this->getCatLogName($md5, 2);
-				$path = '/'.$firstLevelDir.'/'.$secondLevelDir.'/';
+				$path = '/files/'.$firstLevelDir.'/'.$secondLevelDir.'/';
 				if (! File::exists(dirname(public_path().$path.$fileName))) {
                 	$res = File::makeDirectory(dirname(public_path().$path.$fileName), 0755, true, true);
 	            }
