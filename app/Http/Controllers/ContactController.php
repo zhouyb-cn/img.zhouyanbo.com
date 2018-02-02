@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
-use App\Http\Requests\ContactSend;
+use App\Http\Requests\ContactSendRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
-    public function send(ContactSend $request)
+    public function send(ContactSendRequest $request)
     {
         $title   = $request->input('title');
         $name    = $request->input('name');
@@ -40,15 +40,5 @@ class ContactController extends Controller
         } else {
             return false;
         }
-    }
-
-    public function contactList() {
-        return ['contactList' => Contact::all()];
-        // return Contact::all();
-    }
-
-    public function delete() 
-    {
-        
     }
 }

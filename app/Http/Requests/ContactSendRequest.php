@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ContactSend extends FormRequest
+class ContactSendRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -38,5 +38,4 @@ class ContactSend extends FormRequest
             'captcha.captcha' => 'captcha error'
         ];
     }
-
 }

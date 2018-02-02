@@ -30,6 +30,13 @@
 							<li>限制单个上传的文件最大为2M⚠️</li>
 							<li>有任何问题可以<a href="/contact">联系我</a></li>
 						</ul>
+						<br>
+						<strong>备注</strong>
+						<hr>
+						<ul>
+							<li>18年2月1日升级站点php版本到7.2.1</li>
+							<li>18年2月2日升级站点框架到 <a href="https://laravel.com/">laravel5.5</a> </li>
+						</ul>
 	                </div>
                 </div>
 			</div>

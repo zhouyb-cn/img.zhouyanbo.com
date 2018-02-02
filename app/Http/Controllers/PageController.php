@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -21,10 +20,5 @@ class PageController extends Controller
     public function contact()
     {
         return view('contact', ['page' => 'contact']);
-    }
-
-    public function message() 
-    {
-        return view('message', ['page' => 'message', 'contactList' => Contact::all()]);
     }
 }

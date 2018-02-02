@@ -19,7 +19,7 @@ class UploadController extends Controller
 				$secondLevelDir = $this->getCatLogName($md5, 2);
 				$path = '/files/'.$firstLevelDir.'/'.$secondLevelDir.'/';
 				if (! File::exists(dirname(public_path().$path.$fileName))) {
-                	$res = File::makeDirectory(dirname(public_path().$path.$fileName), 0755, true, true);
+                 	$res = File::makeDirectory(dirname(public_path().$path.$fileName), 0755, true, true);
 	            }
 	            $file->move('.'.$path, $fileName);
 	            return response(['code' => 0, 'msg' => '上传成功', 'file' => 'http://img.zhouyanbo.com'.$path.$fileName]);
